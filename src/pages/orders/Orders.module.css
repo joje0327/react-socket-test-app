@@ -1,0 +1,268 @@
+
+
+.header
+{
+    height: 75px;
+    /*background-color: antiquewhite;*/
+    /*position: relative;*/
+    width: auto;
+    display: flex;
+    align-items: center;
+    /*margin: -100px 0 -50px;*/
+    /*padding: 100px 0 50px 0;*/
+}
+
+.headerLogo {
+    margin-left: 20px;
+
+    height: 32px;
+    width: 125px;
+}
+
+.container
+{
+    height: calc(100vh - 80px);
+    /*min-height: 100%;*/
+    /*background-color: blueviolet;*/
+    /*margin: -100px 0 -50px;*/
+    /*padding: 100px 0 50px 0;*/
+    width: auto;
+    display: flex;
+    /*margin: -100px 0 -50px;*/
+    /*padding: 100px 0 50px 0;*/
+}
+
+.sideBar
+{
+    height: 100%;
+    background-color: #00A0C8;
+    width: 200px;
+    /*padding: 20px;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+
+}
+
+.contentWrapper
+{
+    box-sizing: border-box;
+    height: 100%;
+    background-color: #F4F6FA;
+    /*background-color: blue;*/
+    flex: 1;
+    padding: 20px;
+    /*padding: 15px;*/
+
+}
+
+.content
+{
+    box-sizing: border-box;
+    height: 100%;
+    overflow-y: auto;
+    flex: 1;
+    /*margin: 15px;*/
+    border-radius: 5px;
+    background-color: white;
+    padding: 20px 60px 10px;
+
+}
+
+.orderStatus {
+
+    height:60px;
+    display: flex;
+    align-items: center;
+    /*margin-bottom: 5px;*/
+    /*vertical-align: center;*/
+}
+
+.orderStatusText {
+    font-size: 26px;
+
+}
+
+.sideBarMenus {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.sideBarMenu{
+    height: 80px;
+
+    padding-left: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.sideBarMenuSelected{
+    height: 80px;
+    padding-left: 25px;
+    display: flex;
+    align-items: center;
+    background-color: #047491;
+}
+
+.sideBarMenuText {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+
+
+
+
+
+
+.onOpen {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    margin-left: 15px;
+}
+
+
+.onOpenText {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 20px;
+
+}
+
+
+
+
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 55px;
+    height: 28px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+
+
+.orderBox {
+    width: 100%;
+    height: 90px;
+    padding: 15px 10px 15px;
+    border-top: 1px solid #cccccc;
+    border-bottom:  1px solid #cccccc;
+    display: flex;
+    /*background-color: blue;*/
+    align-items: center;
+    /*background-color: #61dafb;*/
+    /*border-top-width: 1px;*/
+    /*border-bottom-width: 1px;*/
+
+}
+
+
+.shopName {
+    width: 150px;
+    /*background-color: yellow;*/
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+
+}
+
+
+.menuDescription {
+    flex: 3;
+    /*background-color: green;*/
+    margin-left: 30px;
+
+
+}
+
+.menuSummary {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 0;
+    /*background-color: #61dafb;*/
+
+}
+
+.menuDetail {
+    font-size: 20px;
+    margin-top: 10px;
+    /*background-color: #047491;*/
+    color: darkgray;
+
+}
+
+.menuOrderTime {
+    width: 150px;
+    padding-top: 22px;
+    /*background-color: red;*/
+    height: 100%;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+
