@@ -3,7 +3,7 @@ import {useCallback, useEffect, useRef, useState} from "react";
 import axios from 'axios';
 import {Navigate} from "react-router-dom";
 import styles from './Orders.module.css';
-import logoImg from '../../images/logo.png'
+import logoImg from '../../images/logos.png'
 import dayjs from "dayjs";
 
 
