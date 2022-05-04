@@ -1,7 +1,7 @@
 import {Button, Form, Header, Input, Label} from "../styles";
 import {useCallback, useEffect, useRef, useState} from "react";
 import axios from 'axios';
-import {Navigate} from "react-router-dom";
+import {Link, Navigate} from "react-router-dom";
 import styles from './Orders.module.css';
 import logoImg from '../../images/logos.png'
 import dayjs from "dayjs";
@@ -13,7 +13,7 @@ const Orders = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [orderCnt, setOrderCnt] = useState(0);
 
-    const getOrderHistoryIngo = async function getOrderHistory() {
+    const getOrderHistoryInfo = async function getOrderHistory() {
         try {
             console.log("오더 리스트로 요청시작");
             const response = await axios.get("http://3.35.164.61:80/api/v1/store/orderHistory");
@@ -36,12 +36,22 @@ const Orders = () => {
     };
 
     useEffect(() => {
+
         setIsLoading(true);
-        getOrderHistoryIngo();
+        getOrderHistoryInfo();
 
         return undefined;
 
     }, []);
+
+    useEffect(()=> {
+        const updating = setInterval(getOrderHistoryInfo, 2000);
+        console.log('setInterval실행')
+
+        return ()=> clearInterval(updating);
+    },[])
+
+
 
 
 
@@ -56,11 +66,12 @@ const Orders = () => {
                     <div id="container" className={styles.container}>
                         <div className={styles.sideBar}>
                             <div className={styles.sideBarMenus}>
-                                <a className={styles.sideBarMenuSelected}><p className={styles.sideBarMenuText}>접수 대기</p></a>
-                                <a className={styles.sideBarMenu}><p className={styles.sideBarMenuText}>진행중</p></a>
-                                <a className={styles.sideBarMenu}><p className={styles.sideBarMenuText}>지난 주문내역</p></a>
-                                <a className={styles.sideBarMenu}><p className={styles.sideBarMenuText}>품절 관리</p></a>
-                                <a className={styles.sideBarMenu}><p className={styles.sideBarMenuText}>설정</p></a>
+                                <Link to="/orders" className={styles.sideBarMenuSelected}><p className={styles.sideBarMenuText}>전체 주문 내역</p></Link>
+                                <Link to="/beforeAcceptOrders" className={styles.sideBarMenu}><p className={styles.sideBarMenuText}>접수 대기</p></Link>
+                                <Link to="/processingOrders" className={styles.sideBarMenu}><p className={styles.sideBarMenuText}>진행중</p></Link>
+                                <Link to="/orderHistory" className={styles.sideBarMenu}><p className={styles.sideBarMenuText}>지난 주문내역</p></Link>
+                                <Link to="/orders" className={styles.sideBarMenu}><p className={styles.sideBarMenuText}>품절 관리</p></Link>
+                                <Link to="/orders" className={styles.sideBarMenu}><p className={styles.sideBarMenuText}>설정</p></Link>
                             </div>
                             <div className={styles.onOpen}>
                                 <label className={styles.switch}>
@@ -76,13 +87,18 @@ const Orders = () => {
                         <div className={styles.contentWrapper}>
                             <div className={styles.content}>
                                 <div className={styles.orderStatus}>
-                                    <p className={styles.orderStatusText}>접수 대기 6</p>
+                                    <p className={styles.orderStatusText}>전체 주문 {orderCnt}</p>
                                 </div>
 
                                 {orderHistory?.map((orderInfo, index) =>{
                                     return (
                                         <div className={styles.orderBox} key={index}>
-                                            <p className={styles.shopName}>{orderInfo.storeName}</p>
+                                            <div>
+                                                <p className={styles.shopName}>{orderInfo.storeName}</p>
+                                                <p className={styles.shopStatus}>status : {orderInfo.orderStatus}</p>
+                                                <p className={styles.shopStatus}>orderId : {orderInfo.orderId}</p>
+                                            </div>
+
                                             <div className={styles.menuDescription}>
                                                 <p className={styles.menuSummary}>{orderInfo.orderItemsSummary}</p>
                                                 <p className={styles.menuDetail}>{orderInfo.orderItemsDetails}</p>

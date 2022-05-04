@@ -88,15 +88,16 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-decoration: none;
 
 }
 
 .sideBarMenu{
     height: 80px;
-
     padding-left: 25px;
     display: flex;
     align-items: center;
+    text-decoration: none;
 }
 
 .sideBarMenuSelected{
@@ -105,6 +106,7 @@
     display: flex;
     align-items: center;
     background-color: #047491;
+    text-decoration: none;
 }
 
 .sideBarMenuText {
@@ -227,6 +229,21 @@ input:checked + .slider:before {
     text-align: center;
     font-size: 24px;
     font-weight: bold;
+    margin: 0;
+    padding: 0;
+    /*background-color: #047491;*/
+
+
+}
+
+.shopStatus {
+    width: 150px;
+    /*background-color: yellow;*/
+    text-align: center;
+    font-size: 20px;
+    /*background-color: #61dafb;*/
+    margin: 0;
+    padding: 0;
 
 }
 
