@@ -26,7 +26,7 @@ const OrderHistory = () => {
     const getOrderHistoryInfo = async function getOrderHistory() {
         try {
             console.log("오더 리스트로 요청시작");
-            const response = await axios.get("http://localhost:8080/api/v1/store/finishedorder2");
+            const response = await axios.get("http://3.35.164.61:80/api/v1/store/finishedorder2");
             console.log(response)
 
             const sortedResponse = [...response.data.data].sort(
