@@ -15,3 +15,9 @@ body {
   /*background-color: red;*/
 }
 
+.appModal {
+  position: absolute;
+  top: 0;
+  background-color: yellow;
+}
+
