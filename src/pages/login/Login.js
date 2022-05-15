@@ -133,7 +133,7 @@ const Login = () => {
                             async function login() {
                                 try {
                                     console.log("오더 리스트로 요청시작");
-                                    const response = await axios.post("http://localhost:8080/api/v1/store/login",
+                                    const response = await axios.post("http://ec2-3-35-164-61.ap-northeast-2.compute.amazonaws.com/api/v1/store/login",
                                         form,
                                         {
                                             headers: { "Content-Type": `application/x-www-form-urlencoded` },
