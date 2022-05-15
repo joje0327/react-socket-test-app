@@ -21,7 +21,7 @@ const useAudio = () => {
 
 
     const toggle = () => {
-        console.log('sound clicked')
+        console.log('sound clicked !!')
         console.log('audio',audio);
         setPlaying(!playing)
         console.log('playing', playing);
