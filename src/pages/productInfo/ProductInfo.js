@@ -8,7 +8,6 @@ import dayjs from "dayjs";
 import {useNavigate} from "react-router";
 import closeBtn from "../../images/closeBtn.png";
 import menuImg from "../../images/menuImg.png"
-import textSound from '../../sound/mixkit-retro-game-notification-212.wav'
 import {ca} from "wait-on/exampleConfig";
 
 

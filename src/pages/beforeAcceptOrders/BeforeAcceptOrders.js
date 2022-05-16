@@ -9,13 +9,14 @@ import dayjs from "dayjs";
 import {useNavigate} from "react-router";
 import ModalInBeforeAcceptOrders from "../modalInbeforAcceptOrders/ModalInBeforeAcceptOrders";
 import {Skeleton} from "@mui/material";
-import textSound from "../../sound/mixkit-retro-game-notification-212.wav";
+import chatagoJumun from "../../assets/chatagojumun.wav";
 import {Client} from '@stomp/stompjs'
 
 
 
 const useAudio = () => {
-    const [audio] = useState(new Audio(textSound));
+    const [audio] = useState(new Audio(chatagoJumun));
+    console.log(audio);
     const [playing, setPlaying] = useState(false);
 
 
@@ -283,7 +284,7 @@ const BeforeAcceptOrders = () => {
                         </div>
 
                         <audio preload="auto"
-                               src="/static/media/mixkit-retro-game-notification-212.b222ebf03a29c11b61f0.wav"
+                               src="/static/media/chatagojumun.27580a8d193db1903881.wav"
                                ref={audioRef}></audio>
                     </div>
 

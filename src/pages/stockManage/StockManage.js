@@ -8,14 +8,14 @@ import dayjs from "dayjs";
 import {useNavigate} from "react-router";
 import closeBtn from "../../images/closeBtn.png";
 import menuImg from "../../images/menuImg.png"
-import textSound from '../../sound/mixkit-retro-game-notification-212.wav'
 import ProductInfo from "../productInfo/ProductInfo";
 import {Skeleton} from "@mui/material";
+import chatagoJumun from "../../sound/chatagojumun.wav";
 
 
 
 const useAudio = () => {
-    const [audio] = useState(new Audio(textSound));
+    const [audio] = useState(new Audio(chatagoJumun));
     const [playing, setPlaying] = useState(false);
 
 
