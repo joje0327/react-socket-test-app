@@ -120,11 +120,13 @@ const StockManage = () => {
     useEffect(() => {
 
         setIsLoading(true);
-        getStockInfo(storeId);
 
+        console.log("화면 로딩시 상점 정보 가져옴");
 
         getStoreInformation(localStorage.getItem("store_id"));
 
+        console.log("화면 로딩시 재고 정보 가져옴");
+        getStockInfo(storeId);
 
         return undefined;
 
@@ -211,7 +213,7 @@ const StockManage = () => {
 
                             {stocksInfo.map((stocksInfo, index)=>{
                                 return(
-                                    <ProductInfo stocksInfo={stocksInfo} getStockInfo={getStockInfo} setStocksInfo={setStocksInfo} ></ProductInfo>
+                                    <ProductInfo stocksInfo={stocksInfo} getStockInfo={getStockInfo} setStocksInfo={setStocksInfo} storeId={storeId} ></ProductInfo>
                                     // <div className={styles.pickupMenuBox}>
                                     //     <img src={menuImg} className={styles.pickupMenuBox_image}></img>
                                     //     <div className={styles.pickupMenuBox_menu}>
@@ -242,9 +244,9 @@ const StockManage = () => {
                             })}
 
                             {/*<button onClick={() => setSoundeffect(prev => !prev)}>play Sound</button>*/}
-                            <div>
-                                <button onClick={toggle}>{playing ? "Pause" : "Play"}</button>
-                            </div>
+                            {/*<div>*/}
+                            {/*    <button onClick={toggle}>{playing ? "Pause" : "Play"}</button>*/}
+                            {/*</div>*/}
                             <audio preload="auto"
                                    src="/static/media/mixkit-retro-game-notification-212.b222ebf03a29c11b61f0.wav"
                                    ref={audioRef}></audio>

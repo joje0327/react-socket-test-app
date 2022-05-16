@@ -13,7 +13,7 @@ import {ca} from "wait-on/exampleConfig";
 
 
 
-const ProductInfo = ({stocksInfo, getStockInfo, setStocksInfo}) => {
+const ProductInfo = ({stocksInfo, getStockInfo, setStocksInfo, storeId}) => {
     // console.log('stocksInfo in ProductInfo : ', stocksInfo);
 
     const [orderAvailable, setOrderAvailable] = useState(stocksInfo.orderAvailable);
@@ -64,7 +64,7 @@ const ProductInfo = ({stocksInfo, getStockInfo, setStocksInfo}) => {
                                            }
                                            setDisabled(false);
 
-                                           let stockInfo = await getStockInfo();
+                                           let stockInfo = await getStockInfo(storeId);
                                            setStocksInfo(stockInfo);
                                            console.log('setOrderAvailable 실행 : ');
                                            // await setOrderAvailable(prev => !prev);
