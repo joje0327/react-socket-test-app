@@ -53,7 +53,8 @@ const StockManage = () => {
     const getStoreInformation = async function getStore(storeId) {
         try {
             console.log("오더 리스트로 요청시작");
-            const response = await axios.get(`http://localhost:8080/api/v1/store?storeId=${storeId}`);
+            // const response = await axios.get(`http://localhost:8080/api/v1/store?storeId=${storeId}`);
+            const response = await axios.get(`http://ec2-3-35-164-61.ap-northeast-2.compute.amazonaws.com/api/v1/store?storeId=${storeId}`);
             console.log("getStoreInformation:", response);
             console.log("setStoreName", response.data.data.storeName)
             setStoreName(response.data.data.storeName);

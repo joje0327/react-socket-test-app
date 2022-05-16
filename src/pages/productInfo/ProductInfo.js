@@ -54,7 +54,8 @@ const ProductInfo = ({stocksInfo, getStockInfo, setStocksInfo}) => {
                                            const params = new URLSearchParams();
                                            params.append('productId', stocksInfo.productId);
                                            params.append('productStatus', !orderAvailable);
-                                           const response =await axios.post("http://localhost:8080/api/v1/store/productstate2", params)
+                                           // const response =await axios.post("http://localhost:8080/api/v1/store/productstate2", params)
+                                           const response =await axios.post("http://ec2-3-35-164-61.ap-northeast-2.compute.amazonaws.com/api/v1/store/productstate2", params)
 
                                            console.log('reponse: ', response);
                                            if (response.data.code === "확인요망") {
